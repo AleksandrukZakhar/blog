@@ -27,6 +27,14 @@ router.delete("/", async (req, res) => {
     res.json({ status: 200 });
 });
 
+router.get("/post", async (req, res) => {
+    const { postId } = req.query;
+
+    const post = await Post.find({ _id: postId });
+
+    res.json({ post });
+});
+
 router.put("/title", async (req, res) => {
     const { postId, title } = req.query;
 
