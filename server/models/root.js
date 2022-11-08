@@ -5,6 +5,6 @@ const rootSchema = new mongoose.Schema({
     password: String,
 });
 
-const rootModel = mongoose.model(rootSchema);
+const rootModel = mongoose.model("Root", rootSchema);
 
 module.exports = rootModel;
