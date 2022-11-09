@@ -36,11 +36,13 @@ const Comments = ({ id }) => {
 
                 return (
                     <div className="comment" key={index}>
-                        <h2>{commentAuthor}</h2>
-                        <p>{text}</p>
                         <img
                             src={`https://avatars.dicebear.com/api/adventurer-neutral/${commentAuthor}.svg`}
                         />
+                        <div>
+                            <h2>{commentAuthor}</h2>
+                            <p>{text}</p>
+                        </div>
                     </div>
                 );
             })}

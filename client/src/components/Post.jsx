@@ -22,8 +22,10 @@ const Post = () => {
 
     return (
         <>
-            <h1>{post?.title}</h1>
-            <p>{post?.text}</p>
+            <div class="post">
+                <h1>{post?.title}</h1>
+                <p>{post?.text}</p>
+            </div>
             <Comments id={id} />
         </>
     );

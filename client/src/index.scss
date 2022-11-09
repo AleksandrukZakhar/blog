@@ -1,5 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
+@mixin flex(
+    $direction: row,
+    $content: flex-start,
+    $items: stretch,
+    $wrap: nowrap
+) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $items;
+    flex-wrap: $wrap;
+}
+
+$white-primary: hsl(100, 100%, 100%);
+$black-primary: hsl(0, 0%, 0%);
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +23,89 @@
     font-family: "Open Sans", sans-serif;
 }
 
-img {
-    width: 40px;
+header {
+    @include flex(row, center, center);
+
+    width: 100%;
+    box-shadow: 0px 5px 5px -2px hsla(0, 0%, 0%, 0.75);
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.posts {
+    @include flex(row, center, flex-start, wrap);
+
+    width: 100%;
+    height: 100vh;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+button {
+    width: 150px;
     height: 40px;
+    margin: 0 0.5rem;
+    border: 1px solid $black-primary;
+    color: $black-primary;
+    background-color: transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+
+    &:hover {
+        transition: 0.3s;
+        color: $white-primary;
+        background-color: $black-primary;
+    }
+}
+
+.post-card {
+    @include flex(column, center, center);
+
+    width: 200px;
+    height: 200px;
+    gap: 1.5rem;
+    border: 0.1px solid black;
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    border: 0;
+    border-radius: 50%;
+}
+
+.post {
+    @include flex(column, center, center);
+
+    width: 100%;
+    gap: 2rem;
+    padding: 2rem;
+
+    p {
+        font-size: 1.3rem;
+    }
+}
+
+.comments {
+    @include flex(column, center, center);
+
+    width: 100%;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+input {
+    width: 18rem;
+    height: 2.5rem;
+    border: 1px solid $black-primary;
+    border-radius: 25px;
+    text-align: center;
+    color: $black-primary;
+}
+
+.comment {
+    @include flex(row, center, center);
+
+    width: 100%;
+    gap: 2rem;
 }

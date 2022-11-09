@@ -21,6 +21,7 @@ const App = () => {
 
     return (
         <>
+            <header>.Blog</header>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Posts posts={posts} />} />

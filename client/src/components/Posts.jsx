@@ -7,10 +7,11 @@ const Posts = ({ posts }) => {
                 const { _id, title, text } = post;
 
                 return (
-                    <div className="post" key={index}>
+                    <div className="post-card" key={index}>
                         <h1>{title}</h1>
-                        <p>{text}</p>
-                        <Link to={`/posts/${_id}`}>Read</Link>
+                        <Link to={`/posts/${_id}`}>
+                            <button>Read</button>
+                        </Link>
                     </div>
                 );
             })}
