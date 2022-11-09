@@ -1,20 +1,21 @@
+import { Link } from "react-router-dom";
+
 const Posts = ({ posts }) => {
     return (
         <div className="posts">
-            {posts ? posts.map((post, index) => {
-                const {_id, title, text} = post;
-                const url = `/posts/${_id}`
-                
+            {posts?.map((post, index) => {
+                const { _id, title, text } = post;
+
                 return (
                     <div className="post" key={index}>
                         <h1>{title}</h1>
                         <p>{text}</p>
-                        <a href={url}>Read</a>
+                        <Link to={`/posts/${_id}`}>Read</Link>
                     </div>
-                )
-            }): null}
+                );
+            })}
         </div>
-    )
-}
+    );
+};
 
 export default Posts;
