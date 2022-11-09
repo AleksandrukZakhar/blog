@@ -8,9 +8,12 @@ const App = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch("http://localhost:8080/", {
-                mode: "cors",
-            });
+            const response = await fetch(
+                "https://thawing-ocean-75564.herokuapp.com/",
+                {
+                    mode: "cors",
+                }
+            );
             const res = await response.json();
 
             setPosts(res.posts);

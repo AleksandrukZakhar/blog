@@ -8,7 +8,7 @@ const Comments = ({ id }) => {
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(
-                `http://localhost:8080/comments?postId=${id}`,
+                `https://thawing-ocean-75564.herokuapp.com/comments?postId=${id}`,
                 { mode: "cors" }
             );
             const res = await response.json();
@@ -21,7 +21,7 @@ const Comments = ({ id }) => {
 
     const commentHandler = async () => {
         await fetch(
-            `http://localhost:8080/comments?postId=${id}&commentAuthor=${nick}&text=${text}`,
+            `https://thawing-ocean-75564.herokuapp.com/comments?postId=${id}&commentAuthor=${nick}&text=${text}`,
             { mode: "cors", method: "PUT" }
         );
 
